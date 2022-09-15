@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-f+m7$3gvow%kfv(*v*p6z6yfxpu*x^af(5n$d9x&2u6flv8xlo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://purelogic.herokuapp.com/", "localhost"]
 
 
 # Application definition
