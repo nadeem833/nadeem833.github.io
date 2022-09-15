@@ -12,6 +12,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import django_heroku
+import os
 
 from pathlib import Path
 
@@ -26,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-f+m7$3gvow%kfv(*v*p6z6yfxpu*x^af(5n$d9x&2u6flv8xlo"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["purelogic.herokuapp.com", "127.0.0.1:8000"]
+ALLOWED_HOSTS = ["purecoding.herokuapp.com", "127.0.0.1:8000"]
 
 
 # Application definition
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -112,9 +114,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+
+
+STATIC_URL = '/static/assets/'
+MEDIA_URL= '/img/'
 
 import os 
 STATICFILES_DIRS= [
