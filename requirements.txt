@@ -1,4 +1,4 @@
-asgiref==3.4.1
+asgiref==
 backports.zoneinfo==0.2.1;python_version<"3.9"
 certifi==2022.6.15.2
 charset-normalizer==2.1.1
